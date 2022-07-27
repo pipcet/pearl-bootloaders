@@ -29,7 +29,8 @@ jobs:
     - run: sudo apt-get install libtool-bin
     - run: git submodule update --init pearl
     - run: make -C pearl -j13 build/released/pipcet/pearl-toolchain/toolchain.tar.zstd
-    - run: (zstd -d build/released/pipcet/pearl-toolchain/toolchain.tar.zstd | tar -C pearl -x)
+    - run: zstd -d build/released/pipcet/pearl-toolchain/toolchain.tar.zstd
+    - run: tar -C pearl -xf build/released/pipcet/pearl-toolchain/toolchain.tar
     - run: make -C pearl -j13 bootloaders/barebox/barebox{checkout}
     - run: make -C pearl -j13 bootloaders/grub/grub{checkout}
     - run: make -C pearl -j13 bootloaders/m1n1/m1n1{checkout}
