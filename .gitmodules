@@ -1,0 +1,3 @@
+[submodule "pearl"]
+	path = pearl
+	url = https://github.com/pipcet/pearl
